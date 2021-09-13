@@ -122,18 +122,12 @@ func main() {
     flag.Parse()
 
     if *wpConfPtr == "" {
-//         db_host := fmt.Sprintf("%s:%s", *wpHostPtr, *wpPortPtr)
-//         db_name := *wpNamePtr
-//         db_user := *wpUserPtr
-//         db_password := *wpPassPtr
-//         table_prefix := *wpTablePrefixPtr
+        db_host := fmt.Sprintf("%s:%s", *wpHostPtr, *wpPortPtr)
+        db_name := *wpNamePtr
+        db_user := *wpUserPtr
+        db_password := *wpPassPtr
+        table_prefix := *wpTablePrefixPtr
         
-//         Testing with os env
-        db_host := os.Setenv("WORDPRESS_DB_HOST", "127.0.0.1")
-        db_name := os.Setenv("WORDPRESS_DB_NAME", "wordpress")
-        db_user := os.Setenv("WORDPRESS_DB_USER", "wordpress")
-        db_password := os.Setenv("WORDPRESS_DB_PASSWORD", "wordpress")
-        table_prefix := os.Setenv("WORDPRESS_TABLE_PREFIX", "wp_")
         
         if db_name == "" {
             fmt.Fprintf(os.Stderr, "flag -db=dbname required!\n")
